@@ -226,7 +226,7 @@ popd
 # may change in the future if we come up with a better way to handle maintaining
 # configs in a git repo
 if [[ ! -d "$HOME/workspace/deployments/cf-boshworkspace" ]]; then
-  git clone --branch  ${CF_BOSHWORKSPACE_VERSION} http://github.com/cloudfoundry-community/cf-boshworkspace
+  git clone --branch  xen-hvm-ify http://github.com/djvdorp/cf-boshworkspace
 fi
 pushd cf-boshworkspace
 mkdir -p ssh
