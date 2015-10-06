@@ -36,7 +36,7 @@ variable "cf2_az" {
 }
 
 variable "network" {
-	default = "10.10"
+  default = "10.10"
 }
 
 variable "debug" {
@@ -86,14 +86,14 @@ variable "aws_centos_ami" {
 
 variable "aws_ubuntu_ami" {
     default = {
-        us-east-1 = "ami-98aa1cf0"
-        us-west-1 = "ami-736e6536"
-        us-west-2 = "ami-37501207"
-        ap-northeast-1 = "ami-df4b60de"
-        ap-southeast-1 = "ami-2ce7c07e"
-        ap-southeast-2 = "ami-1f117325"
-        eu-west-1 = "ami-f6b11181"
-        sa-east-1 = "ami-71d2676c"
+        us-east-1 = "ami-9eaa1cf6"
+        us-west-1 = "ami-076e6542"
+        us-west-2 = "ami-3d50120d"
+        ap-northeast-1 = "ami-e74b60e6"
+        ap-southeast-1 = "ami-d6e7c084"
+        ap-southeast-2 = "ami-1711732d"
+        eu-west-1 = "ami-f0b11187"
+        sa-east-1 = "ami-69d26774"
     }
 }
 
