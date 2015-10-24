@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 module "vpc" {
-  source = "github.com/cloudfoundry-community/terraform-aws-vpc"
+  source = "git::https://github.com/djvdorp/terraform-aws-vpc?ref=xen-hvm-ify"
   network = "${var.network}"
   aws_key_name = "${var.aws_key_name}"
   aws_access_key = "${var.aws_access_key}"
@@ -47,7 +47,7 @@ output "aws_key_path" {
 }
 
 module "cf-net" {
-  source = "github.com/cloudfoundry-community/terraform-aws-cf-net"
+  source = "git::https://github.com/djvdorp/terraform-aws-cf-net?ref=xen-hvm-ify"
   network = "${var.network}"
   aws_key_name = "${var.aws_key_name}"
   aws_access_key = "${var.aws_access_key}"

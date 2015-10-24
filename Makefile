@@ -3,7 +3,8 @@
 all: plan apply provision
 
 plan:
-	terraform get -update
+	rm -rf .terraform/modules/
+	terraform get
 	terraform plan -module-depth=-1 -var-file terraform.tfvars -out terraform.tfplan
 
 apply:
