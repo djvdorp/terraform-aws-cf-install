@@ -188,6 +188,21 @@ address:
 EOF
 }
 
+# Monkey Patch aki_picker.rb by rcefala for issue https://github.com/cloudfoundry/bosh/issues/755
+PATCHDIR="$HOME/aki_picker_patch"
+WORKSPACEDIR=$(dirname $(find $HOME/.rvm/gems -name aki_picker.rb))
+rm -fr $PATCHDIR
+git clone https://gist.github.com/e046bc9e5ed9e2d5c76d.git $PATCHDIR
+cd $WORKSPACEDIR
+set +e
+patch -N --dry-run --silent < ${PATCHDIR}/aki_picker.patch 2>/dev/null
+if [ $? -eq 0 ]; then #apply patch only if needed
+    patch < ${PATCHDIR}/aki_picker.patch
+fi
+set -e
+cd -
+rm -fr $PATCHDIR
+
 if [[ ! -f "$HOME/workspace/deployments/microbosh/settings.yml" ]]; then
   create_settings_yml
 fi
